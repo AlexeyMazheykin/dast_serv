@@ -329,21 +329,14 @@ align-self: center;
 /*Footer finish*/
 
 @media all and (max-width: 1200px) {
-    .catalog_container-item {
-        flex: calc(50% - 30px) 1 1;
-    }
- .catalog_container-item:first-child{
-        flex: calc(50% - 30px) 1 1;
+    .services__card {
+        flex: 0 1 calc(100% / 2 - 10px);
     }
 }
 
 @media all and (max-width: 767px) {
-    .catalog_container-item {
-        flex-basis: calc(100% - 4px)
-    }
-    .catalog_container-item:first-child{
-        background: blueviolet;
-        flex: calc((100% - 4px) / 2) 1 1;
+    .services__card {
+        flex: 0 1 calc(100% - 10px);
     }
 }
 
