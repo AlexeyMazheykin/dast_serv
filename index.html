@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+<header class="header">
+    <div class="header__top">
+        <div class="wrapper">
+            <div class="top__wrapper">
+                <nav class="top__nav">
+                    <ul class="top__nav-list">
+                        <li class="top__nav-item">
+                            <a href="#!" class="top__nav-link">Проекты</a>
+                        </li>
+                        <li class="top__nav-item">
+                            <a href="#!" class="top__nav-link">О нас</a>
+                        </li>
+                        <li class="top__nav-item">
+                            <a href="#!" class="top__nav-link">Оплата</a>
+                        </li>
+                        <li class="top__nav-item">
+                            <a href="#!" class="top__nav-link">Доставка</a>
+                        </li>
+                        <li class="top__nav-item">
+                            <a href="#!" class="top__nav-link">Возврат</a>
+                        </li>
+                        <li class="top__nav-item">
+                            <a href="#!" class="top__nav-link">Кооперация</a>
+                        </li>
+                        <li class="top__nav-item">
+                            <a href="#!" class="top__nav-link">Сертификаты</a>
+                        </li>
+                        <li class="top__nav-item">
+                            <a href="#!" class="top__nav-link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="header__bottom">
+        <div class="wrapper">
+            <div class="header__bottom-wrapper">
+                <div class="header__logo-image">
+                    <a href="" class="header__logo-link">
+                        <img src="./img/logo.png" alt="Логотип Даст">
+                    </a>
+                </div>
+                <nav class="header__bottom-nav">
+                    <ul class="header__bottom-list">
+                        <li class="bottom__nav-item">
+                            <a href="#" class="bottom__nav-link">Каталог</a>
+                        </li>
+                        <li class="bottom__nav-item">
+                            <a href="#!" class="bottom__nav-link">услуги</a>
+                        </li>
+                        <li class="bottom__nav-item">
+                            <a href="#!" class="bottom__nav-link">объекты</a>
+                        </li>
+                        <li class="bottom__nav-item">
+                            <a href="#!" class="bottom__nav-link">акции</a>
+                        </li>
+                        <li class="bottom__nav-item">
+                            <a href="#!" class="bottom__nav-link">новости</a>
+                        </li>
+                        <li class="bottom__nav-item">
+                            <a href="#!" class="bottom__nav-link">блог</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="tel:+74995209792" class="header__bottom-tel">
+                    +7 (499) 520-97-92
+                </a>
+                <div class="header__action">
+                    <a href="#!" class="header__action-item item__auth">
+                        <img src="./img/user.svg" alt="Авторизация" class="header__action-svg">
+                    </a>
+                    <a href="#!" class="header__action-item item__search">
+                        <img src="./img/shopping-cart.svg" alt="Корзина" class="header__action-svg">
+                    </a>
+                    <a href="#!" class="header__action-item item__cart">
+                        <img src="./img/search.svg" alt="Поиск" class="header__action-svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main id="main" class="main">
+    <div class="wrapper">
+        <div class="services__container">
+
+        </div>
+    </div>
+</main>
+<footer class="auth-form_footer footer">
+    <div class="auth-form_footer_wrap">
+        Это футер
+    </div>
+</footer>
+
+
+<script>
+    //HEADER;
+    const headerBottom = document.querySelector('.header__bottom');
+    const headerTop = document.querySelector('.header__top');
+    const main = document.getElementById('main');
+    const itemText = document.querySelectorAll('.item_text')
+    const itemBack = document.querySelectorAll('.catalog_container-item-back')
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > headerTop.scrollHeight) {
+            headerBottom.classList.add('header__fixed');
+            main.style.top = headerBottom.clientHeight + 'px';
+        } else {
+            headerBottom.classList.remove('header__fixed');
+            main.style.top = 'auto'
+        }
+    });
+// CATALOG
+    const removeClass = () => {
+        itemText.forEach(item => {
+            item.classList.remove('item_text-active')
+        })
+        itemBack.forEach(item => {
+            item.classList.remove('catalog_container-item-back-active')
+        })
+    }
+    const addClass = elem => {
+        elem.querySelector('.catalog_container-item-back').classList.add('catalog_container-item-back-active')
+        elem.querySelector('.item_text').classList.add('item_text-active')
+    }
+    const handler = e => {
+    removeClass()
+        let elem = e.target.closest('.catalog_container-item')
+        if (elem) addClass(elem);
+        else removeClass();
+    }
+        document.addEventListener('mouseover', handler);
+        document.addEventListener('touchstart', handler);
+
+</script>
+<script src="1.js"></script>
+</body>
+
+</html>
