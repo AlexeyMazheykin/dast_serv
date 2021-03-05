@@ -117,7 +117,7 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.2;
     font-weight: 400;
     color: #102746;
@@ -270,23 +270,35 @@ img {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -5px;
+    margin-bottom: 20px;
 }
+
 .services__card {
     height: 200px;
     flex: 0 1 calc(100%/3 - 10px);
     margin: 5px;
     background: #EEEEEE;
-    padding: 20px 40px;
+    padding: 15px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    justify-content: space-between;
 }
 .services__card__main {
-    background: url("../img/img_serv/bim2-1.jpg") center/cover no-repeat;
     color: white;
     padding: 0;
     flex: 0 1 calc(100%*2/3 - 10px);
 }
+.services__cards-proj .services__card__main {
+    background: url("../img/img_serv/serv_proj.jpg") center/cover no-repeat;
+}
+.services__cards-mount .services__card__main {
+    background: url("../img/img_serv/serv_mount.jpg") center/cover no-repeat;
+}
+.services__cards-serv .services__card__main {
+    background: url("../img/img_serv/serv_serv.jpg") center/cover no-repeat;
+}
+
 .services__card__main-link {
     background: rgba(99,99,99,0.4);
     width: 100%;
@@ -295,13 +307,19 @@ img {
     position: relative;
 }
 .services__card__main-title {
-
+text-transform: uppercase;
 }
 
 .services__card__title {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
     text-transform: uppercase;
+    font-size: 14px;
+}
+.services__card__desc {
+    font-size: 12px;
+    text-align: justify;
+    margin-bottom: 10px;
 }
 
 .services__list-item {
@@ -312,7 +330,7 @@ img {
 .services__card__price {
 align-self: center;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .services__more-btn {
     background: #4b4f58;
@@ -347,6 +365,9 @@ align-self: center;
 @media all and (max-width: 1200px) {
     .services__card {
         flex: 0 1 calc(100% / 2 - 10px);
+    }
+    .services__card__main {
+        flex: 100%;
     }
 }
 
